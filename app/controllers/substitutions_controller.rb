@@ -10,6 +10,22 @@ class SubstitutionsController < ApplicationController
   end
 
   def index
+    @substitutions = Substitution.all
+
+    @doc = {
+      version: '0.15',
+      groups: [
+        {
+          name: 'Kongress der Möglichkeiten',
+          urls: [],
+          html: 'none',
+          enabled: true,
+          substitutions: @substitutions
+        }
+      ]
+    }
+
+    render json: @doc.to_json
   end
 
   def new
