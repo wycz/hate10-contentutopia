@@ -1,12 +1,4 @@
-%p
-  Substitution count:
-  = @count
-
-%ul
-  - @substitutions.each do |substitution|
-    %li= substitution
-
-%h2 New substitution
+%p#count= @count
 
 = form_for @substitution do |f|
   = f.text_field :input,  placeholder: 'Input'

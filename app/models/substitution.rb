@@ -1,7 +1,7 @@
 class Substitution < ActiveRecord::Base
-  def as_json(options = {})
-#   super({only: [:input, :output]}.merge(options))
+  validates :input, presence: true, allow_blank: false
 
+  def as_json(options = {})
     {
       input: input,
       inputType: 'wholewords',

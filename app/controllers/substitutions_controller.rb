@@ -4,7 +4,12 @@ class SubstitutionsController < ApplicationController
       input: substitution_params[:input]
 
     @substitution.output = substitution_params[:output]
-    @substitution.save!
+
+    begin
+      @substitution.save!
+    rescue ActiveRecord::RecordInvalid
+      redirect_to :substitutions and return
+    end
     
     redirect_to :substitutions, flash: { notice: 'Substitution created' }
   end
@@ -17,7 +22,9 @@ class SubstitutionsController < ApplicationController
       groups: [
         {
           name: 'Kongress der Möglichkeiten',
-          urls: [],
+          urls: [
+            '-http://localhost:3000*'
+          ],
           html: 'none',
           enabled: true,
           substitutions: @substitutions
