@@ -11,7 +11,7 @@
   %body
     %h1 Ignorance is bliss!
 
-    #flash
-      %p#notice= flash[:notice]
+    %section#flash
+      %p#notice.alert= flash[:notice]
 
     = yield

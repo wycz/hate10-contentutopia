@@ -1,7 +1,9 @@
-%p#count= @count
+%section#count
+  %p= @count
 
-= form_for @substitution do |f|
-  = f.text_field :input,  placeholder: 'Input'
-  = f.text_field :output, placeholder: 'Output'
+%section#form
+  = form_for @substitution do |f|
+    = f.text_field :input,  placeholder: 'Input'
+    = f.text_field :output, placeholder: 'Output'
 
-  = f.submit 'Save'
+    = f.submit 'Save'
