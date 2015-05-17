@@ -1,6 +1,8 @@
 class Substitution < ActiveRecord::Base
   validates :input, presence: true, allow_blank: false
 
+  has_paper_trail
+
   def as_json(options = {})
     {
       input: input,
