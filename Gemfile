@@ -44,5 +44,3 @@ group :development, :test do
 end
 
 gem 'haml'
-
-gem 'paper_trail', '~> 4.0.0.beta'
