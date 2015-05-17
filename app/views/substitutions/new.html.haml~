@@ -1,0 +1,9 @@
+%section#count
+  %p= @count
+
+%section#form
+  = form_for @substitution do |f|
+    = f.text_field :input,  placeholder: 'Input word that shall be changed'
+    = f.text_field :output, placeholder: 'Insert desired new word'
+
+    = f.submit 'Save'

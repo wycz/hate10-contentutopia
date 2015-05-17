@@ -3,7 +3,7 @@
 
 %section#form
   = form_for @substitution do |f|
-    = f.text_field :input,  placeholder: 'Input'
-    = f.text_field :output, placeholder: 'Output'
+    = f.text_field :input,  placeholder: 'Insert word to be changed'
+    = f.text_field :output, placeholder: 'Insert desired new word'
 
     = f.submit 'Save'
